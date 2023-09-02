@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+
+    <!-- maxTotal: Maximum number of database connections in pool. Make sure you
+         configure your mysqld max_connections large enough to handle
+         all of your db connections. Set to -1 for no limit. -->
+
+    <!-- maxIdle: Maximum number of idle database connections to retain in pool.
+         Set to -1 for no limit.  See also the DBCP 2 documentation on this
+         and the minEvictableIdleTimeMillis configuration parameter. -->
+
+    <!-- maxWaitMillis: Maximum time to wait for a database connection to become available
+         in ms, in this example 10 seconds. An Exception is thrown if
+         this timeout is exceeded.  Set to -1 to wait indefinitely. -->
+
+    <Resource name="jdbc/postgres" auth="Container" type="javax.sql.DataSource" driverClassName="org.postgresql.Driver"
+        url="jdbc:postgresql://db-postgres:5432/myappdb" username="docker" password=""
+        maxTotal="20" maxIdle="10" maxWaitMillis="-1"/>
+
+</Context>
